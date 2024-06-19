@@ -6,7 +6,8 @@ Backend: ./Auto
 
 Frontend: ./ejercicio_auto  
 
-Para crear los contenedores para este proyecto primero se debe crear los Dockerfile dentro del backend y frontend.
+Para crear los contenedores para este proyecto primero se debe crear los Dockerfile dentro del backend y frontend.   
+
 a continuacion se presenta el formato que deben llevar estos archivos:  
 
 
@@ -61,7 +62,8 @@ EXPOSE 3000
 #Comando para iniciar el proyecto
 CMD [ "npm", "start" ]
 
-Luego se crea el archivo docker-compose.yml, este se lo crea en la raiz de la carpeta './',aqui tambien se agrega un servicio para la base de datos en este caso MySQL 
+Luego se crea el archivo docker-compose.yml, este se lo crea en la raiz de la carpeta './',aqui tambien se agrega un servicio para la base de datos en este caso MySQL   
+
 
 # DOCKER COMPOSE
 services:
@@ -98,15 +100,21 @@ services:
 volumes:
   db-data:
 
+    
 
-  Finalmente luego de crear el docker compose se puede levantar el proyecto mediante los comandos:
+  Finalmente luego de crear el docker compose se puede levantar el proyecto mediante los comandos:  
+  
 
--comando para levantar el proyecto: sudo docker-compose up --build
+-comando para levantar el proyecto: sudo docker-compose up --build  
 
-  url backend: http://localhost:3006/api
-  url frontend: http://localhost:3000/sesion
 
-# URL PARA INICIALIZAR LA BD:
+  url backend: http://localhost:3006/api  
+  
+  url frontend: http://localhost:3000/sesion  
+  
+
+# URL PARA INICIALIZAR LA BD:  
+
 para inicializar la base de datos es necesario dirigirse a la siguiente ruta: localhost:3006/privado/POU-9865-VHKTUY			
 
 
