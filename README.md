@@ -9,10 +9,10 @@ Para crear los contenedores para este proyecto primero se debe crear los Dockerf
 a continuacion se presenta el formato que deben llevar estos archivos:
 
 **DOCKER FILE BACKEND**
-# Imagen base
+#Imagen base
 FROM node:20
 
-# direccion del proyecto
+#direccion del proyecto
 WORKDIR /app
 
 #Copiar dependencias y librerias del proyecto
@@ -21,21 +21,21 @@ COPY package*.json ./
 #Instalar las dependencias y librerias
 RUN npm install
 
-# Copiar los archivos del proyecto al contenedor
+#Copiar los archivos del proyecto al contenedor
 COPY . . 
 
-# Exponer el puerto 8006
+#Exponer el puerto 8006
 EXPOSE 3006
 
-# Comando para iniciar el proyecto
+#Comando para iniciar el proyecto
 CMD [ "npm", "start" ]
 
 
 **DOCKER FILE FRONTEND**
-# Imagen base
+#Imagen base
 FROM node:20
 
-# direccion del proyecto
+#direccion del proyecto
 WORKDIR /app
 
 #Copiar dependencias y librerias del proyecto
@@ -44,13 +44,13 @@ COPY package*.json ./
 #Instalar las dependencias y librerias
 RUN npm install
 
-# Copiar los archivos del proyecto al contenedor
+#Copiar los archivos del proyecto al contenedor
 COPY . . 
 
-# Exponer el puerto 8006
+#Exponer el puerto 8006
 EXPOSE 3000
 
-# Comando para iniciar el proyecto
+#Comando para iniciar el proyecto
 CMD [ "npm", "start" ]
 
 Luego se crea el archivo docker-compose.yml, este se lo crea en la raiz de la carpeta './',aqui tambien se agrega un servicio para la base de datos en este caso MySQL 
