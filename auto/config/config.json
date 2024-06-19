@@ -1,0 +1,11 @@
+{
+    "development": {
+        "username": "desarrollo",
+        "password": "desarrollo",
+        "database": "bdAutos",
+        "host": "db",  
+        "port": 3306,
+        "dialect": "mysql"
+    }
+   
+}
