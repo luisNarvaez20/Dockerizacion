@@ -115,7 +115,7 @@ volumes:
 
 # URL PARA INICIALIZAR LA BD:  
 
-para inicializar la base de datos es necesario dirigirse a la siguiente ruta: localhost:3006/privado/POU-9865-VHKTUY			
+para inicializar la base de datos es necesario dirigirse a la siguiente ruta: http://localhost:3006/privado/POU-9865-VHKTUY			
 
 
 
