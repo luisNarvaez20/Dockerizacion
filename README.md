@@ -66,38 +66,70 @@ Luego se crea el archivo docker-compose.yml, este se lo crea en la raiz de la ca
 
 
 # DOCKER COMPOSE
-services:
-  frontend:
-    build:
-      context: ./ejercicio_auto
-      dockerfile: Dockerfile	
+services:  
+
+  frontend:  
+  
+    build:  
+    
+      context: ./ejercicio_auto  
+      
+      dockerfile: Dockerfile  
+      
     ports:	
-      - "3000:3000"	
-    volumes:	  
-      - ./ejercicio_auto:/app	
-  backend:	
-    build:	
-      context: ./auto
-      dockerfile: Dockerfile
-    ports:
-      - "3006:3006"
+    
+      - "3000:3000"	 
+      
     volumes:  
-      - ./auto:/app
-    depends_on:
-      - db
-  db:
-    image: mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: "1120"
-      MYSQL_DATABASE: "bdAutos"
-      MYSQL_USER: "desarrollo"
-      MYSQL_PASSWORD: "desarrollo"
-    ports:
-      - '3306:3306'
-    volumes:
-      - db-data:/var/lib/mysql
-volumes:
+    
+      - ./ejercicio_auto:/app	  
+      
+  backend:	  
+  
+    build:	 
+    
+      context: ./auto  
+      
+      dockerfile: Dockerfile  
+      
+    ports:  
+    
+      - "3006:3006"  
+      
+    volumes:  
+    
+      - ./auto:/app  
+      
+    depends_on:  
+    
+      - db  
+      
+  db:  
+  
+    image: mysql  
+    
+    restart: always  
+    
+    environment:  
+    
+      MYSQL_ROOT_PASSWORD: "1120"  
+      
+      MYSQL_DATABASE: "bdAutos"  
+      
+      MYSQL_USER: "desarrollo"  
+      
+      MYSQL_PASSWORD: "desarrollo"  
+      
+    ports:  
+    
+      - '3306:3306'  
+      
+    volumes:  
+    
+      - db-data:/var/lib/mysql  
+      
+volumes:  
+
   db-data:
 
     
