@@ -11,7 +11,7 @@ Para crear los contenedores para este proyecto primero se debe crear los Dockerf
 a continuacion se presenta el formato que deben llevar estos archivos:  
 
 
-**DOCKER FILE BACKEND**  
+# DOCKER FILE BACKEND
 
 #Imagen base  
 
@@ -39,7 +39,7 @@ EXPOSE 3006
 CMD [ "npm", "start" ]
 
 
-**DOCKER FILE FRONTEND**
+# DOCKER FILE FRONTEND**
 #Imagen base
 FROM node:20
 
@@ -63,7 +63,7 @@ CMD [ "npm", "start" ]
 
 Luego se crea el archivo docker-compose.yml, este se lo crea en la raiz de la carpeta './',aqui tambien se agrega un servicio para la base de datos en este caso MySQL 
 
-**DOCKER COMPOSE**
+#DOCKER COMPOSE
 services:
   frontend:
     build:
