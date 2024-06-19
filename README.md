@@ -1,11 +1,9 @@
 # Dockerizacion
 
-Programa de concecionaria de autos, frontend en nextjs, backend en nodejs y base de datos mysql
-
+Programa de concecionaria de autos, frontend en nextjs, backend en nodejs y base de datos mysql \
 Backend: ./Auto  
 
-Frontend: ./ejercicio_auto  
-
+Frontend: ./ejercicio_auto \
 Para crear los contenedores para este proyecto primero se debe crear los Dockerfile dentro del backend y frontend.   
 
 a continuacion se presenta el formato que deben llevar estos archivos:  
