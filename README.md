@@ -106,7 +106,7 @@ volumes:
   url backend: http://localhost:3006/api
   url frontend: http://localhost:3000/sesion
 
-# COMANDO PARA INICIALIZAR LA BD:
+# URL PARA INICIALIZAR LA BD:
 para inicializar la base de datos es necesario dirigirse a la siguiente ruta: localhost:3006/privado/POU-9865-VHKTUY			
 
 
