@@ -103,7 +103,7 @@ volumes:
   Finalmente luego de crear el docker compose se puede levantar el proyecto mediante los comandos:  
   
 
--comando para levantar el proyecto: sudo docker-compose up --build  
+**-comando para levantar el proyecto:** sudo docker-compose up --build  
 
 
   url backend: http://localhost:3006/api  
