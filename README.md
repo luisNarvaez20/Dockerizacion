@@ -10,124 +10,95 @@ a continuacion se presenta el formato que deben llevar estos archivos:
 
 
 # DOCKER FILE BACKEND
-
-#Imagen base \
+```yaml
+#Imagen base
 FROM node:20
 
-#direccion del proyecto \
+#direccion del proyecto
 WORKDIR /app  
 
 
-#Copiar dependencias y librerias del proyecto \
+#Copiar dependencias y librerias del proyecto
 COPY package*.json ./
 
-#Instalar las dependencias y librerias \
+#Instalar las dependencias y librerias
 RUN npm install
 
-#Copiar los archivos del proyecto al contenedor \
+#Copiar los archivos del proyecto al contenedor
 COPY . . 
 
-#Exponer el puerto 3006 \
+#Exponer el puerto 3006 
 EXPOSE 3006
 
-#Comando para iniciar el proyecto \
+#Comando para iniciar el proyecto 
 CMD [ "npm", "start" ]
+```
 
 
 # DOCKER FILE FRONTEND
-
-#Imagen base \
+```yaml
+#Imagen base
 FROM node:20
 
-#direccion del proyecto \
+#direccion del proyecto
 WORKDIR /app
 
-#Copiar dependencias y librerias del proyecto \
+#Copiar dependencias y librerias del proyecto
 COPY package*.json ./
 
-#Instalar las dependencias y librerias \
+#Instalar las dependencias y librerias
 RUN npm install
 
-#Copiar los archivos del proyecto al contenedor \
+#Copiar los archivos del proyecto al contenedor
 COPY . . 
 
-#Exponer el puerto 3000 \
+#Exponer el puerto 3000
 EXPOSE 3000
 
-#Comando para iniciar el proyecto \
+#Comando para iniciar el proyecto
 CMD [ "npm", "start" ]
+```
 
 Luego se crea el archivo docker-compose.yml, este se lo crea en la raiz de la carpeta './',aqui tambien se agrega un servicio para la base de datos en este caso MySQL   
 
 
 # DOCKER COMPOSE
-services:  
 
-  frontend:  
-  
-    build:  
-    
-      context: ./ejercicio_auto  
-      
+```yaml
+services:
+  frontend:
+    build:
+      context: ./ejercicio_auto
       dockerfile: Dockerfile  
-      
-    ports:	
-    
-      - "3000:3000"	 
-      
-    volumes:  
-    
-      - ./ejercicio_auto:/app	  
-      
-  backend:	  
-  
-    build:	 
-    
-      context: ./auto  
-      
-      dockerfile: Dockerfile  
-      
-    ports:  
-    
-      - "3006:3006"  
-      
-    volumes:  
-    
-      - ./auto:/app  
-      
-    depends_on:  
-    
-      - db  
-      
-  db:  
-  
-    image: mysql  
-    
-    restart: always  
-    
-    environment:  
-    
-      MYSQL_ROOT_PASSWORD: "1120"  
-      
-      MYSQL_DATABASE: "bdAutos"  
-      
-      MYSQL_USER: "desarrollo"  
-      
-      MYSQL_PASSWORD: "desarrollo"  
-      
-    ports:  
-    
-      - '3306:3306'  
-      
-    volumes:  
-    
-      - db-data:/var/lib/mysql  
-      
-volumes:  
-
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ejercicio_auto:/app
+  backend:
+    build:
+      context: ./auto
+      dockerfile: Dockerfile
+    ports:
+      - "3006:3006"
+    volumes:
+      - ./auto:/app
+    depends_on:
+      - db
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "1120"
+      MYSQL_DATABASE: "bdAutos"
+      MYSQL_USER: "desarrollo"
+      MYSQL_PASSWORD: "desarrollo"
+    ports:
+      - '3306:3306'
+    volumes:
+      - db-data:/var/lib/mysql
+volumes:
   db-data:
-
-    
+```
 
   Finalmente luego de crear el docker compose se puede levantar el proyecto mediante los comandos:  
   
